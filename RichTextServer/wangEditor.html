@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>wangEditor demo</title>
+		<script src="js/MyWangEditor.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="editor">
+			<p>欢迎使用 <b>图码科技</b> 富文本编辑器</p>
+		</div>
+		<div>
+			<input type="button" id="butGetHtml" value="获取网页" />
+		</div>
+
+		<script type="text/javascript">
+			var E = window.wangEditor;
+			var editor = new E('#editor');
+			editor.create();
+			//支持跨域，跨域请使用完整地址
+			editor.config.uploadImgServer='/webapi/UploadImg';
+			//限制一次最多五张
+			editor.customConfig.uploadImgMaxLength = 5;
+			
+			document.getElementById("butGetHtml").onclick=function () {
+                console.log(editor.txt.html());
+            }
+		</script>
+	</body>
+
+</html>
