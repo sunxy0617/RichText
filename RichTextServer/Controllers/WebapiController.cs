@@ -11,19 +11,11 @@ namespace RichTextServer.Controllers
     public class WebapiController : MyGetController
     {
         // GET: Webpai
-        public ActionResult Index()
+        public string Index()
         {
-            return View();
+            return "富文本学习demo";
         }
         
-        public string UploadImg2()
-        {
-            var files = GetRequestFiles(Request);
-
-
-            return  "[{'url':'//www.iceui.net/www/iceui/upload/iceEditor/20200509/1589014279.png','name':'book.png','error':0}]";
-
-        }
 
         [AllowCrossSiteJson]
         [ValidateInput(false)]
